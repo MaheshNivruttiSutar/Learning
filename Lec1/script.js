@@ -80,6 +80,5 @@ console.log("initial value of b = ", b);
 // console.log("5 >= 3 ", 5 >= 3);
 
 
-
-
-// **** Logical Operator ****//
+//**** Logical Operator ****//
+// Logical AND && , Logical OR || , Logical NOT !  //

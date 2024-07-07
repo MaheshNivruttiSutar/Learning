@@ -11,9 +11,14 @@
 // arrowSum(3,5);
 
 
-//Multiplication function
-const arrowmul = (a, b) => {
-    return a*b;
+// //Multiplication function
+// const arrowmul = (a, b) => {
+//     return a*b;
+// }
+// let mult = arrowmul(13, 15);
+// console.log("Multiple of two number", mult);
+
+const printHello = () => {
+    console.log("hello");
 }
-let mult = arrowmul(13, 15);
-console.log("Multiple of two number", mult);
+printHello();

@@ -81,11 +81,11 @@ enhancing their functionality and making it easier to perform common tasks. Here
 
 function add(a, b, c) {
     return a + b + c;
-  }
+}
 
-  const numbers = [1, 2, 3];
-  const result = add.apply(null, numbers); // `null` here means no specific `this` context
-  console.log(result); // Output: 6
+const numbers = [1, 2, 3];
+const result = add.apply(null, numbers); // `null` here means no specific `this` context
+console.log(result); // Output: 6
 
 
 

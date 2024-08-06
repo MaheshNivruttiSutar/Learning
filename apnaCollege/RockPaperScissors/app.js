@@ -14,7 +14,7 @@ const genCompChoice = () => {
 };
 
 const drawGame = () => {
-  msg.innerText = "Game was Draw. Play again.";
+  msg.innerText = "Game Was Draw. Play Again.";
   msg.style.backgroundColor = "#081b31";
 };
 
@@ -43,7 +43,7 @@ const playGame = (userChoice) => {
     let userWin = true;
     if (userChoice === "rock") {
       //scissors, paper
-      userWin = compChoice === "paper" ? false : true;
+      userWin = compChoice === "paper" ? false : true;   //ternary (conditional) operator
     } else if (userChoice === "paper") {
       //rock, scissors
       userWin = compChoice === "scissors" ? false : true;

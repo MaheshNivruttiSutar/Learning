@@ -1,5 +1,7 @@
-const BASE_URL =
-  "https://cdn.jsdelivr.net/npm/@fawazahmed0/currency-api@latest/v1/currencies";
+//Used git hub repo
+// https://github.com/fawazahmed0/exchange-api?tab=readme-ov-file
+
+const BASE_URL = "https://cdn.jsdelivr.net/npm/@fawazahmed0/currency-api@latest/v1/currencies";
 
 const dropdowns = document.querySelectorAll(".dropdown select");
 const btn = document.querySelector("form button");
@@ -8,7 +10,7 @@ const toCurr = document.querySelector(".to select");
 const msg = document.querySelector(".msg");
 
 for (let select of dropdowns) {
-  for (currCode in countryList) {
+  for (let currCode in countryList) {  // Added let to declare currCode
     let newOption = document.createElement("option");
     newOption.innerText = currCode;
     newOption.value = currCode;
@@ -32,15 +34,20 @@ const updateExchangeRate = async () => {
     amtVal = 1;
     amount.value = "1";
   }
-  const URL = `${BASE_URL}/${fromCurr.value.toLowerCase()}/${toCurr.value.toLowerCase()}.json`;
-  let response = await fetch(URL);
-  let data = await response.json();
-  let rate = data[toCurr.value.toLowerCase()];
+  const URL = `${BASE_URL}/${fromCurr.value.toLowerCase()}.json`;
 
-  let finalAmount = amtVal * rate;
-  console.log("amtVal",amtVal);
-  console.log("rate",rate);
-  msg.innerText = `${amtVal} ${fromCurr.value} = ${finalAmount} ${toCurr.value}`;
+  try {
+    let response = await fetch(URL);
+    if (!response.ok) throw new Error("Network response was not ok");
+    let data = await response.json();
+    let rate = data[fromCurr.value.toLowerCase()][toCurr.value.toLowerCase()];
+
+    let finalAmount = amtVal * rate;
+    msg.innerText = `${amtVal} ${fromCurr.value} = ${finalAmount.toFixed(2)} ${toCurr.value}`;  // Fixed to two decimal places
+  } catch (error) {
+    console.error("There was a problem with the fetch operation:", error);
+    msg.innerText = "Error fetching exchange rate";
+  }
 };
 
 const updateFlag = (element) => {

@@ -1,0 +1,73 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.container {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 18px;
+    border: 2mm solid black;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+h1 {
+    margin-bottom: 20px;
+    color: #007bff;
+}
+
+.input-group {
+    margin-bottom: 20px;
+    color: blueviolet;
+}
+
+label {
+    font-size: 18px;
+    margin-right: 10px;
+}
+
+input[type="number"] {
+    width: 50px;
+    padding: 5px;
+    font-size: 16px;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    color: #fff;
+    background-color: #007bff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+.output {
+    margin-top: 20px;
+}
+
+#password {
+    font-size: 24px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    word-wrap: break-word;
+    border: 2mm solid black; /* 2mm border with a solid style and black color */
+    padding: 5px; /* Optional padding to add space inside the border */
+    width: 300px; /* Set a fixed width */
+    height: 29px; /* Ensure the height adjusts based on content */
+    overflow-wrap: break-word; /* Break long words if necessary */
+    white-space: nowrap; /* Prevent text from wrapping */
+    overflow: hidden; /* Hide overflow if the text is too long */
+    text-overflow: ellipsis; /* Show '...' if the text overflows */
+    text-align: center; /* Center align the text inside the box */
+}
